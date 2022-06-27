@@ -1,0 +1,97 @@
+body {
+  background-color: aliceblue;
+  font-family: "Questrial", sans-serif;
+}
+h1,
+h2,
+h4,
+.temp-now {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 800;
+}
+h2 {
+  margin-bottom: 0;
+}
+.temp-now {
+  margin-bottom: 0;
+}
+
+.temperature-now-span {
+  font-size: 40px;
+}
+
+.units {
+  color: white;
+  position: relative;
+  top: -10px;
+  left: -5px;
+  font-size: 25px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.container {
+  max-width: 50%;
+  margin-top: 100px;
+  background: radial-gradient(
+    circle at 74.2% 50.9%,
+    rgb(14, 72, 222) 5.2%,
+    rgb(3, 22, 65) 75.3%
+  );
+  padding: 30px 35px;
+  border-radius: 20px;
+}
+
+.container-fluid {
+  display: inline-flex;
+
+  align-items: flex-start;
+}
+
+.location-btn {
+  height: 46px;
+}
+
+.search-btn,
+.location-btn {
+  padding: 0 20px;
+  margin: 0 4px 15px 4px;
+}
+.d-flex,
+.d-flex.form-location {
+  margin: 0 2px 15px 4px;
+}
+
+.weather-today {
+  text-align: center;
+  color: white;
+  line-height: 40px;
+  font-size: 30px;
+}
+.forecast {
+  flex-wrap: 1px;
+  margin: 20px 0 0 10px;
+}
+.card-body {
+  text-align: center;
+}
+.col {
+  padding: 0;
+}
+.card-text {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+.form-control {
+  background-color: transparent;
+  line-height: 2;
+  margin-top: 0;
+  margin-bottom: 15px;
+}

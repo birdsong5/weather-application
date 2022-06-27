@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Questrial&family=Tiro+Devanagari+Sanskrit&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-fluid">
+        <form class="d-flex" id="city-search" role="search">
+          <input
+            class="form-control me-2"
+            id="city-input"
+            type="search"
+            placeholder="Search for a city.."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-light search-btn" type="submit">
+            Search
+          </button>
+        </form>
+        <form class="d-flex form-location" id="location">
+          <button class="btn btn-outline-light location-btn" type="submit">
+            My location
+          </button>
+        </form>
+      </div>
+      <div class="row current-city">
+        <div class="col-5">
+          <h1></h1>
+          <h2>🌤️</h2>
+          <div class="temp-now" id="temperature-now">
+            <span class="temperature-now-span"></span>
+            <span class="units">°C</span>
+          </div>
+          <h4></h4>
+        </div>
+        <div class="col-7">
+          <div class="weather-today">
+            <div class="day-today"></div>
+            <div class="time-now"></div>
+            <div>Wind: <span id="wind"></span> km/h</div> 
+            <div>Humidity: <span id="humidity"><span>%</div>
+            <div>Feels like <span id="feels-like"></span>°C</div>
+          </div>
+        </div>
+      </div>
+      <div class="row forecast">
+        <div class="col">
+          <div class="card" style="width: 8rem">
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <h6 class="card-subtitle mb-2 text-muted">3rd of June</h6>
+              <p class="card-text">🌤️</p>
+              <p class="temperature">27°C / 12°C</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 8rem">
+            <div class="card-body">
+              <h5 class="card-title">Saturday</h5>
+              <h6 class="card-subtitle mb-2 text-muted">4th of June</h6>
+              <p class="card-text">🌦️</p>
+              <p class="temperature">27°C / 12°C</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 8rem">
+            <div class="card-body">
+              <h5 class="card-title">Sunday</h5>
+              <h6 class="card-subtitle mb-2 text-muted">5th of June</h6>
+              <p class="card-text">🌥️</p>
+              <p class="temperature">27°C / 12°C</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 8rem">
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+              <h6 class="card-subtitle mb-2 text-muted">6th of June</h6>
+              <p class="card-text">🌧️</p>
+              <p class="temperature">27°C / 12°C</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 8rem">
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+              <h6 class="card-subtitle mb-2 text-muted">7th of June</h6>
+              <p class="card-text">🌧️</p>
+              <p class="temperature">27°C / 12°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
