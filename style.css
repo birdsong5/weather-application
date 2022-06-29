@@ -17,6 +17,9 @@ h1 {
 h2 {
   margin-bottom: 0;
 }
+p {
+  text-align: center;
+}
 .temp-now {
   margin-bottom: 0;
 }
