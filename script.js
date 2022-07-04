@@ -42,11 +42,12 @@ let timeNow = document.querySelector(".time-now");
 timeNow.innerHTML = `${hourNow}:${minutesNow}`;
 
 function showWeather(response) {
+  console.log(response);
   document.querySelector("h1").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
   document.querySelector(".temperature-now-span").innerHTML =
     Math.round(celsiusTemperature);
-  document.querySelector("h4").innerHTML = response.data.weather[0].main;
+  document.querySelector("h4").innerHTML = response.data.weather[0].description;
   document.querySelector(
     "#humidity"
   ).innerHTML = `${response.data.main.humidity}%`;
@@ -89,8 +90,18 @@ function getCurrentPosition(event) {
 function displayFahrenheitUnits(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(".temperature-now-span");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusUnits(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".temperature-now-span");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
@@ -103,5 +114,8 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitUnits);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusUnits);
 
 searchCityDefault("Prague");

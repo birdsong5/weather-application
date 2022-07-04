@@ -20,13 +20,6 @@ h2 {
 p {
   text-align: center;
 }
-.temp-now {
-  margin-bottom: 0;
-}
-
-.temperature-now-span {
-  font-size: 40px;
-}
 
 .units {
   color: white;
@@ -37,12 +30,26 @@ p {
 }
 #celsius-link,
 #fahrenheit-link {
-  color: rgb(187, 216, 241);
+  color: rgb(147, 217, 242);
   text-decoration: none;
+}
+
+#celsius-link:hover,
+#fahrenheit-link:hover {
+  text-decoration: underline;
+}
+
+.temp-now {
+  margin-bottom: 0;
+}
+
+.temperature-now-span {
+  font-size: 40px;
 }
 
 h4 {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .container {
@@ -102,4 +109,13 @@ h4 {
   line-height: 2;
   margin-top: 0;
   margin-bottom: 15px;
+}
+
+.temp-now .active {
+  color: white;
+  cursor: default;
+}
+
+.temp-now .active:hover {
+  text-decoration: none;
 }
