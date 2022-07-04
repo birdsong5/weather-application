@@ -43,9 +43,9 @@ timeNow.innerHTML = `${hourNow}:${minutesNow}`;
 
 function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector(".temperature-now-span").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector(".temperature-now-span").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("h4").innerHTML = response.data.weather[0].main;
   document.querySelector(
     "#humidity"
@@ -86,10 +86,22 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFahrenheitUnits(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".temperature-now-span");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
 let submitCity = document.querySelector("#city-search");
 submitCity.addEventListener("submit", searchCity);
 
 let currentLocationButton = document.querySelector(".location-btn");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitUnits);
 
 searchCityDefault("Prague");

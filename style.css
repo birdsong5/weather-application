@@ -32,8 +32,13 @@ p {
   color: white;
   position: relative;
   top: -10px;
-  left: -5px;
+  left: 2px;
   font-size: 25px;
+}
+#celsius-link,
+#fahrenheit-link {
+  color: rgb(187, 216, 241);
+  text-decoration: none;
 }
 
 h4 {
