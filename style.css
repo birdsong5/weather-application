@@ -1,5 +1,5 @@
 body {
-  background-color: aliceblue;
+  background-image: url("images/daysmall2.jpg");
   font-family: "Questrial", sans-serif;
 }
 h1,
@@ -18,6 +18,13 @@ h1 {
 p {
   text-align: center;
 }
+.author {
+  text-align: center;
+  font-weight: 600;
+}
+.author a {
+  color: navy;
+}
 
 .units {
   color: white;
@@ -26,14 +33,12 @@ p {
   left: 2px;
   font-size: 25px;
 }
-#celsius-link,
-#fahrenheit-link {
+.temp-now a {
   color: rgb(147, 217, 242);
   text-decoration: none;
 }
 
-#celsius-link:hover,
-#fahrenheit-link:hover {
+.temp-now a:hover {
   text-decoration: underline;
 }
 

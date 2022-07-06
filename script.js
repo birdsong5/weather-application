@@ -55,8 +55,10 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  celsiusTemperatureFeelsLike = response.data.main.feels_like;
+
   document.querySelector("#feels-like").innerHTML = Math.round(
-    response.data.main.feels_like
+    celsiusTemperatureFeelsLike
   );
   iconElement.setAttribute(
     "src",
@@ -96,21 +98,32 @@ function getCurrentPosition(event) {
 function displayFahrenheitUnits(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(".temperature-now-span");
+  let feelsLikeTemp = document.querySelector("#feels-like");
+  let feelsLikeUnit = document.querySelector("#feels-like-unit");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let fahrenheitTemperatureFeelsLike =
+    (celsiusTemperatureFeelsLike * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  feelsLikeTemp.innerHTML = Math.round(fahrenheitTemperatureFeelsLike);
+  feelsLikeUnit.innerHTML = "°F";
 }
 
 function displayCelsiusUnits(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(".temperature-now-span");
+  let feelsLikeTemp = document.querySelector("#feels-like");
+  let feelsLikeUnit = document.querySelector("#feels-like-unit");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  feelsLikeTemp.innerHTML = Math.round(celsiusTemperatureFeelsLike);
+  feelsLikeUnit.innerHTML = "°C";
 }
 
 let celsiusTemperature = null;
+let celsiusTemperatureFeelsLike = null;
 
 let submitCity = document.querySelector("#city-search");
 submitCity.addEventListener("submit", searchCity);
