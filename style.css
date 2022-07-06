@@ -3,7 +3,6 @@ body {
   font-family: "Questrial", sans-serif;
 }
 h1,
-h2,
 h4,
 .temp-now {
   text-align: center;
@@ -13,10 +12,9 @@ h4,
 h1 {
   font-size: 45px;
   font-weight: 800;
-}
-h2 {
   margin-bottom: 0;
 }
+
 p {
   text-align: center;
 }
@@ -24,7 +22,7 @@ p {
 .units {
   color: white;
   position: relative;
-  top: -10px;
+  top: -2px;
   left: 2px;
   font-size: 25px;
 }
@@ -44,7 +42,9 @@ p {
 }
 
 .temperature-now-span {
-  font-size: 40px;
+  font-size: 50px;
+  position: relative;
+  top: 15px;
 }
 
 h4 {
@@ -112,8 +112,9 @@ h4 {
 }
 
 .temp-now .active {
-  color: white;
   cursor: default;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
 }
 
 .temp-now .active:hover {

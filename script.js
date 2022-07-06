@@ -44,6 +44,7 @@ timeNow.innerHTML = `${hourNow}:${minutesNow}`;
 function showWeather(response) {
   console.log(response);
   document.querySelector("h1").innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon");
   celsiusTemperature = response.data.main.temp;
   document.querySelector(".temperature-now-span").innerHTML =
     Math.round(celsiusTemperature);
@@ -57,6 +58,11 @@ function showWeather(response) {
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCityDefault(city) {
