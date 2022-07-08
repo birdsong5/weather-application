@@ -67,6 +67,38 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col">
+          <div class="card" style="width: 8rem">
+            <div class="card-body">
+              <h5 class="card-title" id="weather-forecast-date">${day}</h5>
+              <h6 class="card-subtitle mb-2 text-muted" id="weather-description">Rain</h6>
+              <img 
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              width="76"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-max-temp">18°C</span> /
+                <span class="weather-forecast-min-temp">12°C</span>
+              </div>
+            </div>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function searchCityDefault(city) {
   let apiKey = "468253ff0d2c7b9f49a43bcd7fd91cbf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -137,4 +169,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitUnits);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusUnits);
 
+showForecast();
 searchCityDefault("Prague");
