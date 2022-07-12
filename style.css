@@ -56,8 +56,13 @@ h4 {
   text-transform: capitalize;
 }
 
+#weather-description {
+  text-transform: capitalize;
+  opacity: 0.8;
+}
+
 .container {
-  max-width: 50%;
+  max-width: 55%;
   margin-top: 100px;
   background: radial-gradient(
     circle at 74.2% 50.9%,
