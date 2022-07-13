@@ -72,7 +72,7 @@ function showForecast(response) {
               <h5 class="card-title" id="weather-forecast-date">${formatDay(
                 forecastDay.dt
               )}</h5>
-              <h6 class="card-subtitle mb-2" id="weather-description">${
+              <h6 class="card-subtitle" id="weather-description">${
                 forecastDay.weather[0].description
               }</h6>
               <img 
