@@ -21,8 +21,9 @@ p {
 .author {
   text-align: center;
 }
-.author a {
-  color: navy;
+.author .git,
+.author .linkedin {
+  color: midnightblue;
 }
 
 .units {
