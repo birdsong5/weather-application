@@ -117,10 +117,6 @@ h4 {
   opacity: 0.8;
   font-size: 18px;
 }
-.card-text {
-  font-size: 40px;
-  margin-bottom: 0;
-}
 
 .temp-now .active {
   cursor: default;
@@ -172,6 +168,22 @@ p {
   .forecast-col {
     margin-bottom: 10px;
   }
+  .card-body {
+    background: none;
+    background-color: rgb(243, 239, 252);
+    padding: 6px 0;
+  }
+  .card-title {
+    font-size: 23px;
+  }
+  .card-subtitle {
+    font-size: 18px;
+  }
+  .weather-forecast-max-temp,
+  .weather-forecast-min-temp {
+    font-size: 23px;
+  }
+
   .author {
     margin-bottom: 20px;
   }
