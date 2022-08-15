@@ -3,9 +3,9 @@ body {
   font-family: "Questrial", sans-serif;
 }
 
-.container {
+.app-body {
   max-width: 55%;
-  margin-top: 100px;
+  margin: 100px auto 10px auto;
   background: radial-gradient(
     circle at 74.2% 50.9%,
     rgb(14, 72, 222) 5.2%,
@@ -14,31 +14,26 @@ body {
   padding: 30px 35px;
   border-radius: 20px;
 }
-
-.container-fluid {
-  display: inline-flex;
-
-  align-items: flex-start;
+.navbar {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.search-form {
+  display: flex;
 }
 
 .form-control {
   background-color: transparent;
-  line-height: 2;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
-.location-btn {
-  height: 46px;
-}
-
+.form-control,
 .search-btn,
 .location-btn {
-  padding: 0 20px;
-  margin: 0 4px 15px 4px;
+  padding: 6px 10px;
+  margin-right: 10px;
 }
-.d-flex,
-.d-flex.form-location {
-  margin: 0 2px 15px 4px;
+.search-btn,
+.location-btn {
+  width: 180px;
 }
 
 h1,
@@ -98,7 +93,6 @@ h4 {
   font-size: 30px;
 }
 .forecast {
-  flex-wrap: 1px;
   margin: 20px 0 0 10px;
 }
 .card-body {
@@ -113,10 +107,9 @@ h4 {
   );
   border-radius: 6px;
 }
-.col {
-  padding: 0;
+.forecast-icon {
+  margin: 0 auto;
 }
-
 .weather-forecast-max-temp {
   font-size: 18px;
 }
@@ -148,4 +141,55 @@ p {
 .author .git,
 .author .linkedin {
   color: midnightblue;
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background-image: none;
+    background-color: rgb(221, 211, 241);
+  }
+  .app-body {
+    max-width: 92%;
+    margin-top: 20px;
+    padding: 30px 25px;
+  }
+  h4 {
+    margin-bottom: 20px;
+  }
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .search-btn,
+  .location-btn {
+    margin-top: 10px;
+    width: auto;
+    opacity: 0.7;
+  }
+  .weather-today {
+    font-size: 27px;
+  }
+  .forecast-col {
+    margin-bottom: 10px;
+  }
+  .author {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .app-body {
+    max-width: 90%;
+    margin-top: 100px;
+    padding: 30px 25px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .app-body {
+    max-width: 80%;
+    margin-top: 60px;
+    padding: 30px 25px;
+  }
+  .author {
+    margin-bottom: 20px;
+  }
 }

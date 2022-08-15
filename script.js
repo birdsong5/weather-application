@@ -66,8 +66,9 @@ function showForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-        <div class="col">
-          <div class="card" style="width: 9rem">
+        
+        <div class="col-12 col-lg col-md forecast-col">
+          <div class="card">
             <div class="card-body">
               <h5 class="card-title" id="weather-forecast-date">${formatDay(
                 forecastDay.dt
@@ -80,6 +81,7 @@ function showForecast(response) {
                 forecastDay.weather[0].icon
               }@2x.png"
               alt=""
+              class="d-none d-md-block forecast-icon"
               width="76"
               />
               <div class="weather-forecast-temperatures">
